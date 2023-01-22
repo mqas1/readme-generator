@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/mqas1/readme-generator#readme",
   "dependencies": {
+    "dayjs": "^1.11.7",
     "inquirer": "^8.2.4"
   }
 }
