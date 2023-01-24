@@ -195,7 +195,7 @@ function renderLicenseSection(license) {
 
 const renderContentsTable = (license) => {
   if (license !== "None"){
-    return `\n- [Description](#description)\n- [Installation](#installation)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [License](#license)\n- [Tests](#tests)\n- [Questions](#questions)`;
+    return `\n- [Description](#description)\n- [Installation](#installation)\n- [Usage](#usage)\n- [License](#license)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [Questions](#questions)`;
   } else {
     return `\n- [Description](#description)\n- [Installation](#installation)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [Questions](#questions)`;
   }
@@ -224,10 +224,10 @@ function generateMarkdown(data) {
   \n## Usage
   \n${usage}
   
+  \n${licenseSection}
+
   \n## Contributing
   \n${contributing}
-  
-  \n${licenseSection}
   
   \n## Tests
   \n${tests}
