@@ -8,33 +8,27 @@ function renderLicenseBadge(license) {
   switch (license){
     case "Apache 2.0 License":
       {
-        `[![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](${licenseUrl})`;
-        break;
+        return `[![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](${licenseUrl})`;
       }
     case "Boost Software License 1.0":
       {
-        `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](${licenseUrl})`;
-        break;
+        return `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](${licenseUrl})`;
       }
     case "GNU GPLv3":
       {
-        `[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](${licenseUrl})`;
-        break;
+        return `[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](${licenseUrl})`;
       }
     case "MIT License":
       {
-        `[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](${licenseUrl})`;
-        break;
+        return `[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](${licenseUrl})`;
       }
     case "Mozilla Public License 2.0":
       {
-        `[![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](${licenseUrl})`;
-        break;
+        return `[![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](${licenseUrl})`;
       }
     case "The Unlicense":
       {
-        `[![License](https://img.shields.io/badge/license-Unlicense-red.svg)](${licenseUrl})`;
-        break;
+        return `[![License](https://img.shields.io/badge/license-Unlicense-red.svg)](${licenseUrl})`;
       }
     default: 
       return ""   
@@ -47,33 +41,27 @@ function renderLicenseLink(license) {
   switch (license){
     case "Apache 2.0 License":
       {
-        "https://opensource.org/licenses/Apache-2.0";
-        break;
+        return "https://opensource.org/licenses/Apache-2.0";
       }
     case "Boost Software License 1.0":
       {
-        "https://www.boost.org/LICENSE_1_0.txt";
-        break;
+        return "https://www.boost.org/LICENSE_1_0.txt";
       }
     case "GNU GPLv3":
       {
-        "https://www.gnu.org/licenses/gpl-3.0";
-        break;
+        return "https://www.gnu.org/licenses/gpl-3.0";
       }
     case "MIT License":
       {
-        "https://opensource.org/licenses/MIT";
-        break;
+        return "https://opensource.org/licenses/MIT";
       }
     case "Mozilla Public License 2.0":
       {
-        "https://opensource.org/licenses/MPL-2.0";
-        break;
+        return "https://opensource.org/licenses/MPL-2.0";
       }
     case "The Unlicense":
       {
-        "https://unlicense.org/";
-        break;
+        return "https://unlicense.org/";
       }
     default: 
       return ""   
@@ -84,11 +72,14 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   let copyrightDate = dayjs().format("YYYY");
-  
+  let licenseUrl = renderLicenseLink(license);
+
   switch (license){
     case "Apache 2.0 License":
       {
-        `Copyright ${copyrightDate} ${github}
+        return `## License\nThis application is covered under the [${license}](${licenseUrl}):
+        
+        Copyright ${copyrightDate}
 
         Licensed under the Apache License, Version 2.0 (the "License");
         you may not use this file except in compliance with the License.
@@ -101,11 +92,12 @@ function renderLicenseSection(license) {
         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
         See the License for the specific language governing permissions and
         limitations under the License.`;
-        break;
       }
     case "Boost Software License 1.0":
       {
-        `Boost Software License - Version 1.0 - August 17th, 2003
+        return `## License\nThis application is covered under the [${license}](${licenseUrl}):
+        
+        Boost Software License - Version 1.0 - August 17th, 2003
 
         Permission is hereby granted, free of charge, to any person or organization
         obtaining a copy of the software and accompanying documentation covered by
@@ -128,12 +120,12 @@ function renderLicenseSection(license) {
         FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
         ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
         DEALINGS IN THE SOFTWARE.`;
-        break;
       }
     case "GNU GPLv3":
       {
-        `${title} 
-        Copyright (C) ${copyrightDate} ${github}
+        return `## License\nThis application is covered under the [${license}](${licenseUrl}) license:
+      
+        Copyright (C) ${copyrightDate}
     
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
@@ -147,11 +139,12 @@ function renderLicenseSection(license) {
     
         You should have received a copy of the GNU General Public License
         along with this program.  If not, see <https://www.gnu.org/licenses/>.`;
-        break;
       }
     case "MIT License":
       {
-        `Copyright ${copyrightDate} ${github}
+        return `## License\nThis application is covered under the [${license}](${licenseUrl}):
+        
+        Copyright ${copyrightDate}
 
         Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
         
@@ -159,16 +152,18 @@ function renderLicenseSection(license) {
         
         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         `;
-        break;
       }
     case "Mozilla Public License 2.0":
       {
-        `This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.`;
-        break;
+        return `## License\nThis application is covered under the [${license}](${licenseUrl}):
+        
+        This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.`;
       }
     case "The Unlicense":
       {
-        `This is free and unencumbered software released into the public domain.
+        return `## License\nThis application is covered under the [${license}](${licenseUrl}):
+        
+        This is free and unencumbered software released into the public domain.
 
         Anyone is free to copy, modify, publish, use, compile, sell, or
         distribute this software, either in source code form or as a compiled
@@ -192,36 +187,56 @@ function renderLicenseSection(license) {
         OTHER DEALINGS IN THE SOFTWARE.
         
         For more information, please refer to <http://unlicense.org/>`;
-        break;
       }
     default: 
       return ""   
   }
 }
 
-const generateContentsTable = (license) => {
+const renderContentsTable = (license) => {
   if (license !== "None"){
-    `- [Description](#description)
-     - [Installation](#installation)
-     - [Usage](#usage)
-     - [Contributing](#contributing)
-     - [License](#License)
-     - [Tests](#tests)
-     - [Questions](#questions)`;
+    return `\n- [Description](#description)\n- [Installation](#installation)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [License](#license)\n- [Tests](#tests)\n- [Questions](#questions)`;
   } else {
-    `- [Description](#description)
-     - [Installation](#installation)
-     - [Usage](#usage)
-     - [Contributing](#contributing)
-     - [Tests](#tests)
-     - [Questions](#questions)`;
+    return `\n- [Description](#description)\n- [Installation](#installation)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [Questions](#questions)`;
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-`;
+  const {title, description, installation, usage, contributing, tests, license, github, email} = data
+  const licenseBadge = renderLicenseBadge(license);
+  const licenseSection = renderLicenseSection(license);
+  const contentsTable = renderContentsTable(license);
+  
+  return `# ${title} 
+  
+  \n${licenseBadge}
+  
+  \n## Description
+  \n${description}
+  
+  \n## Table of Contents
+  \n${contentsTable}
+  
+  \n## Installation
+  \n${installation}
+  
+  \n## Usage
+  \n${usage}
+  
+  \n## Contributing
+  \n${contributing}
+  
+  \n${licenseSection}
+  
+  \n## Tests
+  \n${tests}
+  
+  \n## Questions
+  \nYou can find me on GitHub: [${github}](https://github.com/${github})
+  \nSend me an email with any further questions: ${email}
+  \n---
+  \n*This README was made with ❤️ by the [README Generator](https://github.com/mqas1/readme-generator)*`;
 }
 
 module.exports = generateMarkdown;
