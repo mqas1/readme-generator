@@ -1,4 +1,4 @@
-# test 
+# Test README 
   
   
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -6,7 +6,7 @@
   
 ## Description
   
-test
+A short description of the project
   
   
 ## Table of Contents
@@ -23,18 +23,20 @@ test
   
 ## Installation
   
-test
+Installation instructions
   
   
 ## Usage
   
-test
+Instructions on using the application
   
   
 ## License
 This application is covered under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0) license:
+
+        Test README
       
-        Copyright (C) 2023
+        Copyright (C) 2023 test
     
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
@@ -52,19 +54,19 @@ This application is covered under the [GNU GPLv3](https://www.gnu.org/licenses/g
   
 ## Contributing
   
-test
+Inform potential contributors how they can do so
   
   
 ## Tests
   
-test
+put any test code here
   
   
 ## Questions
   
 You can find me on GitHub: [test](https://github.com/test)
   
-Send me an email with any further questions: test
+Send me an email with any further questions: test@fakeemail.com
   
 ---
   

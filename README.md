@@ -7,6 +7,8 @@
 ## Description
   
 It is hard enough remembering HTML, CSS, and JavaScript. Full-stack web developers have enough to worry about and don’t need to add using Markdown to structure a README to that list. This command line application was created to aid developers in generating professional README files. All the heavy lifting is done for you… though knowing Markdown won’t hurt. It will help you use this application!
+
+[Video walkthrough](https://drive.google.com/file/d/1ksFJZKLMN7IBEn2tIB55XRpFzrmkNm5f/view?usp=sharing) of the application.
   
   
 ## Table of Contents
