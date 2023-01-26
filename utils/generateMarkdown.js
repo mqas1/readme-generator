@@ -70,7 +70,7 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(license, title, github) {
   let copyrightDate = dayjs().format("YYYY");
   let licenseUrl = renderLicenseLink(license);
 
@@ -78,8 +78,8 @@ function renderLicenseSection(license) {
     case "Apache 2.0 License":
       {
         return `## License\nThis application is covered under the [${license}](${licenseUrl}):
-        
-        Copyright ${copyrightDate}
+
+        Copyright ${copyrightDate} ${github}
 
         Licensed under the Apache License, Version 2.0 (the "License");
         you may not use this file except in compliance with the License.
@@ -124,8 +124,10 @@ function renderLicenseSection(license) {
     case "GNU GPLv3":
       {
         return `## License\nThis application is covered under the [${license}](${licenseUrl}) license:
+
+        ${title}
       
-        Copyright (C) ${copyrightDate}
+        Copyright (C) ${copyrightDate} ${github}
     
         This program is free software: you can redistribute it and/or modify
         it under the terms of the GNU General Public License as published by
@@ -144,7 +146,7 @@ function renderLicenseSection(license) {
       {
         return `## License\nThis application is covered under the [${license}](${licenseUrl}):
         
-        Copyright ${copyrightDate}
+        Copyright ${copyrightDate} ${github}
 
         Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
         
@@ -205,7 +207,7 @@ const renderContentsTable = (license) => {
 function generateMarkdown(data) {
   const {title, description, installation, usage, contributing, tests, license, github, email} = data
   const licenseBadge = renderLicenseBadge(license);
-  const licenseSection = renderLicenseSection(license);
+  const licenseSection = renderLicenseSection(license, title, github);
   const contentsTable = renderContentsTable(license);
   
   return `# ${title} 
