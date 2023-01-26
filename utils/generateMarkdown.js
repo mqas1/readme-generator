@@ -1,7 +1,7 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 const dayjs = require("dayjs");
 
+// Function that returns a license badge based on which license is passed in
+// If there is no license, it returns an empty string
 function renderLicenseBadge(license) {
   let licenseUrl = renderLicenseLink(license);
 
@@ -35,8 +35,8 @@ function renderLicenseBadge(license) {
   }
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Function that returns the license link
+// If there is no license, it returns an empty string
 function renderLicenseLink(license) {
   switch (license){
     case "Apache 2.0 License":
@@ -68,8 +68,9 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Function that returns the license section of README if there is no license, it returns an empty string.
+// DayJS is used to get the date for licenses that require a date, and the user's inputted 
+// GitHub account name for the copyright attribute.
 function renderLicenseSection(license, title, github) {
   let copyrightDate = dayjs().format("YYYY");
   let licenseUrl = renderLicenseLink(license);
@@ -195,6 +196,7 @@ function renderLicenseSection(license, title, github) {
   }
 }
 
+// Function for generating the Table of Contents for the README depending on whether the user chooses a license.
 const renderContentsTable = (license) => {
   if (license !== "None"){
     return `\n- [Description](#description)\n- [Installation](#installation)\n- [Usage](#usage)\n- [License](#license)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [Questions](#questions)`;
@@ -203,7 +205,7 @@ const renderContentsTable = (license) => {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// Function to generate markdown for README
 function generateMarkdown(data) {
   const {title, description, installation, usage, contributing, tests, license, github, email} = data
   const licenseBadge = renderLicenseBadge(license);
